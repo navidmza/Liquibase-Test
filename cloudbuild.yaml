@@ -7,7 +7,7 @@ steps:
     args:
       - '-c'
       - >-
-        docker run liquibase:postimage
+        docker run gcr.io/my-project-777-367108/liquibase/postimage@sha256:a0d809c24e9c341579634511d5d2aa169d9d66585ed927d625f179575ba45ac7
         --url="jdbc:postgresql://35.244.83.147:5432/test"
         --changeLogFile=/liquibase/changelog/changelog.postgres.sql
         --username=test --password=test --logLevel=debug update
