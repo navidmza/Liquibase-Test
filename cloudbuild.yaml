@@ -1,0 +1,14 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/my-project-777-367108/liquibase/postimage', '.']
+   - name: 'gcr.io/cloud-builders/docker'
+   args: ['push', 'gcr.io/my-project-777-367108/liquibase/postimage']
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - '-c'
+      - >-
+        docker run liquibase/postimage
+        --url="jdbc:postgresql://35.244.83.147:5432/test"
+        --changeLogFile=/liquibase/changelog/changelog.postgres.sql
+        --username=test --password=test --logLevel=debug update
+    entrypoint: bash
