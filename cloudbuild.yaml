@@ -3,7 +3,7 @@ steps:
     args: ['build', '-t', 'gcr.io/my-project-777-367108/liquibase/postimage', '.']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/my-project-777-367108/liquibase/postimage']
-  - name: 'gcr.io/my-project-777-367108'
+  - name: 'gcr.io/my-project-777-367108/liquibase'
     args:
       - '-c'
       - >-
