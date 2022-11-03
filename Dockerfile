@@ -10,4 +10,4 @@ RUN  apt-get update -y && \
 USER liquibase
 
 # copy changelog file to image
-COPY changelog.postgres.sql /liquibase/changelog/
+COPY ./changelog.postgres.sql /liquibase/changelog/
